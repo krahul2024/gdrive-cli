@@ -1,0 +1,20 @@
+{
+  "name": "gdrive-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.4",
+    "express": "^4.18.2",
+    "google-auth-library": "^9.6.3",
+    "googleapis": "^133.0.0",
+    "opn": "^6.0.0",
+    "yargs": "^17.7.2"
+  }
+}
