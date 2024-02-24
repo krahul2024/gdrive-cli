@@ -11,6 +11,9 @@ function modeToPermissionsString(mode) {
     return permissions;
 }
 
+// this is some change just to check the commits
+
+
 yargs.command({
     command : 'hi', 
     describe : 'This command prints a welcome message!', 
