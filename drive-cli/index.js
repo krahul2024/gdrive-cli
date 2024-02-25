@@ -4,15 +4,13 @@ const fs = require('fs');
 const path = require('path'); 
 const chalk = require('chalk')
 const yargs = require('yargs'); 
+const axios = require('axios'); 
 
 function modeToPermissionsString(mode) {
     // mode is in octal format, we have to convert it to hex 
     const permissions = (mode & parseInt("777", 8)).toString(8);
     return permissions;
 }
-
-// this is some change just to check the commits
-
 
 yargs.command({
     command : 'hi', 
@@ -70,4 +68,41 @@ yargs.command({
     aliases : ['ls', 'l']
 })
 
+
+yargs.command({
+    command: ['start', 's'], 
+    describe: 'Initiates conversation with server!',
+    handler: async function() {
+        try {
+            const response = await axios.get('http://localhost:4000/start', { withCredentials: true });
+            console.log(response?.data);
+        } catch (error) {
+            console.log(error.response.data);
+        }
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 yargs.parse();
+

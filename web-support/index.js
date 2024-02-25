@@ -179,4 +179,13 @@ app.post('/curl-check', async (req, res) => {
     })
 })
 
+app.get('/start', (req, res) => {
+    const fileContent = getFileContent('tokens.json'); 
+    return res.json({
+        fileContent
+    })
+})
+
+
+
 app.listen(values.PORT, () => console.log('Server is running at port : ', values.PORT)); 
